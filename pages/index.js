@@ -33,10 +33,10 @@ const Index = () => {
       </Head>
       <div>
       { videos ? videos.map((video, i) => (
-        {console.log(video.videos)}
+        console.log(video.videos)
         <div key={i}>
           {video['videos'].map((vid, i) => (
-            {console.log(vid.embed)}
+            console.log(vid.embed)
               <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ _html: vid.embed }}></div>
           ))}
         </div>
