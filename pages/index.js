@@ -38,7 +38,9 @@ const Index = () => {
       { videos ? console.log(videos) && videos.map((video, i) => (
         <div key={i}>
           { console.log(video) && video['videos'].map((vid, i) => (
-              <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={getVideos()}></div>
+              <video autoplay controls className="w-screen h-screen">
+                <source src={video.embed} />
+              </video>
           ))}
         </div>
       )) : <div className="text-center">Video Loading Now..</div> }
