@@ -32,7 +32,7 @@ const Index = () => {
       </Head>
       <div>
       { videos ? videos.map((video, i) => (
-        <div>
+        <div key={i}>
           <video className="w-screen h-screen" src={video.url}></video>
         </div>
       )) : <div className="text-center">Video Loading Now..</div> }
