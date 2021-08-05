@@ -18,6 +18,7 @@ const Index = () => {
     let RESTurl = "https://footy-vids.herokuapp.com/api";
     axios.get(RESTurl).then(videos => {
       setVideos(videos['data']);
+      console.log(videos['data']);
     });
     // request(url, query).then(res => {
       // setMessage(res['hello']);
