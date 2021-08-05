@@ -35,7 +35,7 @@ const Index = () => {
       { videos ? videos.map((video, i) => (
         <div key={i}>
           {video['videos'].map((vid, i) => (
-              <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ __html: vid.embed }}></div>
+              <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ _html: vid.embed }}></div>
           ))}
         </div>
       )) : <div className="text-center">Video Loading Now..</div> }
