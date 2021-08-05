@@ -36,7 +36,7 @@ const Index = () => {
         {console.log(video.videos)}
         <div key={i}>
           {video['videos'].map((vid, i) => (
-            {cconsole.log(vid.embed)}
+            {console.log(vid.embed)}
               <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ _html: vid.embed }}></div>
           ))}
         </div>
