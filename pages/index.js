@@ -39,7 +39,7 @@ const Index = () => {
         <div key={i}>
           <video autoPlay controls className="w-screen h-screen">
             <source src={video.url} />
-          </videos>
+          </video>
         </div>
       )) : <div className="text-center">Video Loading Now..</div> }
       </div>
