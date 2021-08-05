@@ -32,11 +32,9 @@ const Index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-      { videos ? videos.map((video, i) => (
-        console.log(video.videos)
+      { videos ? console.log(videos) && videos.map((video, i) => (
         <div key={i}>
-          {video['videos'].map((vid, i) => (
-            console.log(vid.embed)
+          { console.log(video) && video['videos'].map((vid, i) => (
               <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ _html: vid.embed }}></div>
           ))}
         </div>
