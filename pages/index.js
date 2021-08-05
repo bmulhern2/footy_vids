@@ -37,7 +37,6 @@ const Index = () => {
               <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ __html: vid.embed }}></div>
           ))}
         </div>
-        ))}
       )) : <div className="text-center">Video Loading Now..</div> }
       </div>
     </div>
