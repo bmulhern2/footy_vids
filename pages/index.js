@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import { gql, request } from 'graphql-request';
 import { useEffect, useState } from 'react';
-import Message from '../components/Message';
-import AddMessage from '../components/AddMessage';
 import axios from 'axios';
 
 const url = "http://localhost:8080/graphql";
@@ -15,11 +13,11 @@ const query = gql`
 `;
 
 const Index = () => {
-  let [message, setMessage] = useState();
+  let [videos, setVideos] = useState();
   useEffect(() => {
     let RESTurl = "https://footy-vids.herokuapp.com/api";
     axios.get(RESTurl).then(videos => {
-      console.log(videos['data']);
+      setVideos(videos['data']);
     });
     // request(url, query).then(res => {
       // setMessage(res['hello']);
@@ -33,11 +31,11 @@ const Index = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="text-center">Welcome to the GraphStack</div>
-      <AddMessage />
-      { message ? message.map((item, i) => ( 
-        <Message className="text-center" key={i} arr={item} />
-      )) : <></> }
+      { videos ? videos.map((video, i) => (
+        <div>
+          <video className="w-screen h-screen" src={video.url}></video>
+      )) : <div className="text-center">Video Loading..</div>}
+
     </div>
   )
 }
