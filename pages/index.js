@@ -18,9 +18,9 @@ const Index = () => {
   let [message, setMessage] = useState();
   useEffect(() => {
     let RESTurl = "https://footy-vids.herokuapp.com/api";
-    axios.get(RESTurl, videos => {
+    axios.get(RESTurl).then(videos => {
       console.log(videos);
-    })
+    });
     // request(url, query).then(res => {
       // setMessage(res['hello']);
     // })
