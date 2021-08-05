@@ -17,7 +17,6 @@ const Index = () => {
   useEffect(() => {
     let RESTurl = "https://footy-vids.herokuapp.com/api";
     axios.get(RESTurl).then(videos => {
-      console.log(videos);
       setVideos(videos['data']);
     });
     // request(url, query).then(res => {
@@ -34,7 +33,9 @@ const Index = () => {
       <div>
       { videos ? videos.map((video, i) => (
         <div key={i}>
-          <div className="w-screen h-screen" dangerouslySetInnerHTML={{ __html: video.url }}></div>
+        {video['videos'].map((vid, i) => (
+            <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ __html: vid.embed }}></video>
+        ))}
         </div>
       )) : <div className="text-center">Video Loading Now..</div> }
       </div>
