@@ -23,7 +23,10 @@ const Index = () => {
     // request(url, query).then(res => {
       // setMessage(res['hello']);
     // })
-  }, [])
+  }, []);
+  const getVideos = (arr) => {
+    return { __html: arr.embed }
+  };
   return (
     <div>
       <Head>
@@ -35,7 +38,7 @@ const Index = () => {
       { videos ? console.log(videos) && videos.map((video, i) => (
         <div key={i}>
           { console.log(video) && video['videos'].map((vid, i) => (
-              <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={{ __html: vid.embed }}></div>
+              <div key={i} className="w-screen h-screen" dangerouslySetInnerHtml={getVideos()}></div>
           ))}
         </div>
       )) : <div className="text-center">Video Loading Now..</div> }
