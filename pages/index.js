@@ -37,7 +37,7 @@ const Index = () => {
       )) : <div className="text-center">Video Loading Now..</div>}
 
     </div>
-  )
+  ));
 }
 
 export default Index;
